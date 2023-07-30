@@ -4,14 +4,14 @@
 #Order the unique scores in ascending order, to easily access second lowest.
 #Then use a for loop to iterate through nested list and check whether second 
 #element of second level is equal to the second lowest score.
-#NB: Commented out prints are for testing and debugging.
+#NB: Commented out prints are for testing and debugging. May need to fix indents.
 
 if __name__ == '__main__':
 
 #names and scores are inputted separately, so create nested list of 
 #names and scores by interatively appending names and scores as they are inputted
 
-results=[]
+    results=[]
     for _ in range(int(input())):
         name = input()
         score = float(input())
