@@ -1,0 +1,30 @@
+#APPROACH:
+#To get alphatetical list of second lowest scores, first create ordered 
+#nested list of names and scores. Then use that to get a list of scores.
+#Order the unique scores in ascending order, to easily access second lowest.
+#Then use a for loop to iterate through nested list and check whether second 
+#element of second level is equal to the second lowest score.
+#NB: Commented out prints are for testing and debugging.
+
+if __name__ == '__main__':
+
+#names and scores are inputted separately, so create nested list of 
+#names and scores by interatively appending names and scores as they are inputted
+
+results=[]
+    for _ in range(int(input())):
+        name = input()
+        score = float(input())
+        results.append([name,score])
+
+#order results by name alphabetically, and create list of ordered unique scores 
+
+results2=sorted(results,key=lambda x:x[0])
+scores=sorted(list(set(x[1] for x in results2)))
+#print(results2)
+#print(scores)
+second_score=scores[1]
+#print(second_score)
+for student in results2:
+    if student[1]==second_score:
+        print(student[0])
