@@ -1,0 +1,9 @@
+if __name__ == '__main__':
+    n = int(input())
+    integer_list = map(int, input().split())
+    
+    #have to use tuple function here, can't get away with round brackets
+    
+    my_tuple=tuple(integer_list)
+    #print(list(my_tuple))
+    print(hash(my_tuple))
