@@ -1,0 +1,20 @@
+if __name__ == '__main__':
+    n = int(input())
+    student_marks = {}
+    for _ in range(n):
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    query_name = input()
+    #print(student_marks)
+    #print(student_marks[query_name])
+    total_scores=sum(student_marks[query_name])
+    no_scores=len(student_marks[query_name])
+    #print(no_scores)
+    #print(total_scores)
+    
+    #note the formatting for decimal points, 
+    #the colon represents number of characters used in formatting
+    #.2f is 2 figures after the decimal (note the .)
+    #see https://pyformat.info/ ctrl+f "decimal" for more info
+    print('{:.2f}'.format(total_scores/no_scores))
