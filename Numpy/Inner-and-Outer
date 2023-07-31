@@ -1,0 +1,12 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+
+# Note that you can declare the input directly as the datatype and object you need
+
+import numpy as np
+A=np.array(input().split(),dtype='int')
+B=np.array(input().split(),dtype='int')
+
+#print(A)
+#print(B)
+print(np.inner(A,B))
+print(np.outer(A,B))
