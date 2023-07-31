@@ -1,0 +1,17 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy as np
+
+N,M,P=map(int,input().split())
+matrix1=np.zeros((N,P))
+matrix2=np.zeros((M,P))
+matrix1=np.asarray(matrix1, dtype = 'int')
+matrix2=np.asarray(matrix2, dtype = 'int')
+for i in range(N):
+    row1=list(map(int,input().split()))
+    matrix1[i][:]=row1
+for j in range(M):
+    row2=list(map(int,input().split()))
+    matrix2[j][:]=row2
+    
+print(np.concatenate((matrix1,matrix2),axis=0))
+    
