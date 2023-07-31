@@ -1,0 +1,5 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy as np
+coefs=np.array(input().split(),dtype='float')
+point=float(input())
+print(np.polyval(coefs,point))
