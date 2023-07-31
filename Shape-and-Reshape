@@ -1,0 +1,9 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy as np
+elements=input().split()
+
+#note no need to use an empty array and populate, instead
+#we can populate immediately using the argument
+
+arr=[int(x) for x in elements]
+print(np.reshape(np.array(arr),(3,3)))
