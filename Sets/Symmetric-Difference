@@ -1,0 +1,14 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+M=int(input())
+A=set(map(int,input().split()))
+N=int(input())
+B=set(map(int,input().split()))
+
+difa2b=A.difference(B)
+difb2a=B.difference(A)
+
+sym_dif=difa2b.union(difb2a)
+sym_dif_sort=sorted(list(sym_dif))
+#print(sym_dif_sort)
+for i in range(len(sym_dif_sort)):
+    print(sym_dif_sort[i])
