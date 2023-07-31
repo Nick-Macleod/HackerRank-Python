@@ -1,0 +1,11 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy as npy
+N=int(input())
+A=[[0 for x in range(N)]for y in range(N)]
+#print(A)
+for i in range(N):
+    row=input().split()
+    for j in range(N):
+        A[i][j]=float(row[j])
+#print(A)
+print(round(npy.linalg.det(A),2))       
