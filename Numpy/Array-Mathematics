@@ -1,0 +1,18 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy as np
+N,M=map(int,input().split())
+matrix1=np.zeros((N,M),dtype='int')
+matrix2=np.zeros((N,M),dtype='int')
+for i in range(N):
+    row1=list(map(int,input().split()))
+    matrix1[i][:]=row1
+for j in range(N):
+    row2=list(map(int,input().split()))
+    matrix2[j][:]=row2
+    
+print(np.add(matrix1,matrix2))
+print(np.subtract(matrix1,matrix2))
+print(np.multiply(matrix1,matrix2))
+print(np.floor_divide(matrix1,matrix2))
+print(np.mod(matrix1,matrix2))
+print(np.power(matrix1,matrix2))
