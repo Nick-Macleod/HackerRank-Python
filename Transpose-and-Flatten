@@ -1,0 +1,16 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Be careful about datatypes in this one (note the last line to test)
+
+import numpy as np
+N,M=map(int,input().split())
+
+# numpy zeros creates a float array, so have to change it to integer 
+
+elements=np.zeros((N,M))
+elements = np.asarray(elements, dtype = 'int')
+for i in range(N):
+    row=list(map(int,input().split()))
+    elements[i][:]=row
+print(np.transpose(elements))
+print(elements.flatten())
+#print(elements.dtype)
