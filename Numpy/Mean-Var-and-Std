@@ -1,0 +1,13 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy as np
+N,M=map(int,input().split())
+matrix=np.zeros((N,M),dtype='int')
+for i in range(N):
+    row=list(map(int,input().split()))
+    matrix[i][:]=row
+#print(matrix)
+print(np.mean(matrix,axis=1))
+print(np.var(matrix,axis=0))
+print(round(np.std(matrix),11))
+
+# You have to round to 11 places for some reason in this one but aren't told that
