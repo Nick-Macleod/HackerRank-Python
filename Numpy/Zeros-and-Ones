@@ -1,0 +1,9 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+import numpy as np
+
+# Note that the shape input for zeros and ones is a tuple or an integer
+# so take your input and immediately make it a tuple
+
+integers=tuple(map(int,input().split()))
+print(np.zeros(integers,dtype=np.int))
+print(np.ones(integers,dtype=np.int))
