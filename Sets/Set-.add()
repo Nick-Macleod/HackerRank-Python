@@ -1,0 +1,10 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Note that each separate line of input is one country
+
+N=int(input())
+stamps_countries=set([])
+for i in range(N):
+    country=input()
+    stamps_countries.add(country)
+#print(stamps_countries)
+print(len(list(stamps_countries)))
