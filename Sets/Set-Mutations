@@ -1,0 +1,22 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+num_A=int(input())
+# DO NOT FORGET THAT THIS IS A SET OF INTEGERS
+A=set(map(int,input().split()))
+N=int(input())
+for i in range(N):
+    cmd=input().split()
+    I=int(cmd[1])
+    s=set(map(int,input().split()))
+    if cmd[0]=='intersection_update':
+        A.intersection_update(s)
+       # print(A)
+    elif cmd[0]=='update':
+        A.update(s)
+       # print(A)
+    elif cmd[0]=='symmetric_difference_update':
+        A.symmetric_difference_update(s)
+       # print(A)
+    elif cmd[0]=='difference_update':
+        A.difference_update(s)
+       # print(A)
+print(sum(A))
