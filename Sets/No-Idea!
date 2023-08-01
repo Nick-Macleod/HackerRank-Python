@@ -1,0 +1,10 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n,m=map(int,input().split())
+arr=map(int,input().split())
+A=set(map(int,input().split()))
+B=set(map(int,input().split()))
+
+# Efficiently use resources by vectorising as much as possible, and ensure you 
+# don't lose A and B to map stuff (here immediately make them sets)
+
+print(sum([(x in A)-(x in B) for x in arr]))
