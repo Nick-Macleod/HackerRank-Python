@@ -1,0 +1,23 @@
+#
+# Complete the 'plusMinus' function below.
+#
+# The function accepts INTEGER_ARRAY arr as parameter.
+#
+
+def plusMinus(arr):
+    # Write your code here
+    L=len(arr)
+    positives=[x for x in arr if x>0]
+    num_positives=len(positives)
+    num_zeros=arr.count(0)
+    num_negatives=L-num_positives-num_zeros
+    print(round(num_positives/L,6))
+    print(round(num_negatives/L,6))
+    print(round(num_zeros/L,6))
+
+if __name__ == '__main__':
+    n = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    plusMinus(arr)
