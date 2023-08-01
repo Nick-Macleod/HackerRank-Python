@@ -1,0 +1,7 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n=int(input())
+engl_roll=set(map(int,input().split()))
+b=int(input())
+fr_roll=set(map(int,input().split()))
+
+print(len(list(engl_roll.difference(fr_roll))))
