@@ -1,0 +1,25 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+# Note: pop has different implementation in Python 3 and Pypy3 (it removes the last
+# element in Pypy and the first element in Python 3), solution uses Python 3
+# implementation, and this works in that setting. If you want to use Pypy3
+# you should reverse the set s then implement this code. 
+n=int(input())
+s=set(map(int,input().split()))
+N=int(input())
+for i in range(N):
+    cmd=input().split()
+    if cmd[0]=='pop':
+        s.pop()
+        #print(s)
+    elif cmd[0]=='remove':
+        I=int(cmd[1])
+        s.discard(I)
+        #print(s)
+        #if s.discard(I)!=s:
+        #print(I)
+            #s.remove(I)
+    elif cmd[0]=='discard':
+        I=int(cmd[1])
+        s.discard(I)
+        #print(s)
+print(sum(s))
