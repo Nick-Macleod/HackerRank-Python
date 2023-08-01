@@ -1,0 +1,9 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+A=set(map(int,input().split()))
+n=int(input())
+truth_vector=[]
+for i in range(n):
+    B=set(map(int,input().split()))
+    truth_vector.append(B.issubset(A) and len(list(A))>len(list(B)))
+
+print(all(truth_vector))
