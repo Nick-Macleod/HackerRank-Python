@@ -1,0 +1,28 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+T=int(input())
+for i in range(T):
+    num_A=int(input())
+    A=set(map(int,input().split()))
+    num_B=int(input())
+    B=set(map(int,input().split()))
+    #print(A)
+    #print(B)
+    #print(A.intersection(B))
+    if A.intersection(B)==A:
+        print(True)
+    else:
+        print(False)
+
+# Alternative once I found out that .issubset() exists in Python
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+T=int(input())
+for i in range(T):
+    num_A=int(input())
+    A=set(map(int,input().split()))
+    num_B=int(input())
+    B=set(map(int,input().split()))
+    #print(A)
+    #print(B)
+    #print(A.intersection(B))
+    print(A.issubset(B))
