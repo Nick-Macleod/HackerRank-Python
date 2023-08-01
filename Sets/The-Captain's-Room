@@ -1,0 +1,20 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+K=int(input())
+
+# Note: in Python, map creates and object to iterate over, BUT once it is iterated
+# over it is consumed. In this case, if you immediately create a set of the rooms
+# you will consume the list (this was my first attempt). THUS, we should first 
+# create a list of the rooms, and use this list to create the set.
+
+# Approach: 
+
+rooms=map(int,input().split())
+rooms=list(rooms)
+#print(rooms)
+set_of_rooms=set(rooms)
+#print(set_of_rooms)
+
+# Assume Captain in room i, and other rooms are j_l, then total rooms will be
+# Eq1=K*sum(j_l)+i=K*[sum(j_l)+i]-(K-1)i, thus i=[sum(rooms)-Eq1]/K-1
+
+print(int((sum(set_of_rooms)*K-sum(rooms))/(K-1)))
