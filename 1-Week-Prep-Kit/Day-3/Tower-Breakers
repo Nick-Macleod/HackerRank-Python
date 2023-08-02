@@ -1,0 +1,43 @@
+# Complete the 'towerBreakers' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts following parameters:
+#  1. INTEGER n
+#  2. INTEGER m
+#
+
+# Strategy: If m=1, there are no moves for P1 so P2 wins
+# ELSE 
+# If n is even, P2 can mirror each of P1s moves, since there is an 
+# even number of towers, and hence always a move to pair, P2 wins
+# If n is odd, P1 reduces one tower to 1, and then the game proceeds as if
+# n is even, except the roles are reversed so P1 wins.
+# cf: https://stackoverflow.com/questions/41643198/tower-breakers-nim-game-variation-with-divisors
+
+def towerBreakers(n, m):
+    # Write your code here
+    if m==1:
+        return(2)
+    else:
+        if n%2==0:
+            return(2)
+        else:
+            return(1)
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    t = int(input().strip())
+
+    for t_itr in range(t):
+        first_multiple_input = input().rstrip().split()
+
+        n = int(first_multiple_input[0])
+
+        m = int(first_multiple_input[1])
+
+        result = towerBreakers(n, m)
+
+        fptr.write(str(result) + '\n')
+
+    fptr.close()
