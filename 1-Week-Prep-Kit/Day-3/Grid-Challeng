@@ -1,0 +1,53 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'gridChallenge' function below.
+#
+# The function is expected to return a STRING.
+# The function accepts STRING_ARRAY grid as parameter.
+#
+
+def gridChallenge(grid):
+    # Write your code here
+    t=len(grid)
+    n=len(grid[0])
+    #print(t,n)
+    row_sort_grid=[]
+    for i in range(t):
+        row_sort_grid.append("".join(sorted(grid[i])))
+    
+    #print(row_sort_grid)
+    for j in range(n):
+        col_sort="".join([row_sort_grid[i][j] for i in range(t)])
+     #   print(col_sort)
+     #   print("".join(sorted(col_sort)))
+        if "".join(sorted(col_sort))!=col_sort:
+            return('NO')
+        
+    return('YES')
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    t = int(input().strip())
+
+    for t_itr in range(t):
+        n = int(input().strip())
+
+        grid = []
+
+        for _ in range(n):
+            grid_item = input()
+            grid.append(grid_item)
+
+        result = gridChallenge(grid)
+
+        fptr.write(result + '\n')
+
+    fptr.close()
