@@ -1,0 +1,45 @@
+#
+# Complete the 'palindromeIndex' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts STRING s as parameter.
+#
+# The output of this function is the index of the letter that
+# can be removed to turn the string s into a palindrome.
+# It returns -1 if s is already a palindrome or if it cannot be
+# turned into a palindrome.
+
+
+def palindromeIndex(s):
+ # Write your code here
+
+ # First create a mini function to return true or false if a string is a palindrome or not
+ def is_palindrome(string):
+ return(string==string[::-1])
+
+ L=len(s)
+
+
+ if is_palindrome(s):
+ return(-1)
+
+# Strategy is to pairs of letters starting from both ends.
+# If they match, then neither should be removed to make a palindrome.
+# If they don't match, check if removing one or the other makes s a palindrome.
+# If one does, return that index, if neither do, it cannot be done by removing
+# only one character and in that case return -1.
+
+ upper=L-1
+ lower=0
+
+ while upper>lower:
+ if s[upper]==s[lower]:
+ upper=upper-1
+ lower=lower+1
+ else:
+ if is_palindrome(s[lower+1:upper+1]):
+ return(lower)
+ elif is_palindrome(s[lower:upper]):
+ return(upper)
+ else:
+ return(-1)
