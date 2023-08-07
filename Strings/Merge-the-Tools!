@@ -1,0 +1,11 @@
+def merge_the_tools(string, k):
+    # your code goes here
+    for i in range(int(len(string)/k)):
+        u=''
+        for j in range(k):
+            current_character=string[i*k+j]
+            if current_character not in u:
+                u=u+current_character
+        print(u)
+
+if __name__ == '__main__':
